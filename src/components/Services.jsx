@@ -14,6 +14,12 @@ const SERVICES = [
     msg: "Hola! Quiero consultar sobre reparación de heladera o freezer.",
   },
   {
+    icon: "Camaras frigorificas",
+    title: "Cámaras frigoríficas",
+    desc: "Diagnóstico y reparación de cámaras frigoríficas y equipos de frío comercial y/o diseño de cámaras frigoríficas a medida desde cero.",
+    msg: "Hola! Quiero consultar sobre reparación de cámara frigorífica.",
+  },
+  {
     icon: "lavarropas",
     title: "Lavarropas",
     desc: "Service técnico de lavarropas: fugas, ruidos, no centrifuga, no calienta.",
@@ -22,7 +28,16 @@ const SERVICES = [
 ];
 
 function Icon({ name }) {
-  const common = { width: 26, height: 26, viewBox: "0 0 24 24", fill: "none", stroke: "currentColor", strokeWidth: 1.7, strokeLinecap: "round", strokeLinejoin: "round" };
+  const common = {
+    width: 26,
+    height: 26,
+    viewBox: "0 0 24 24",
+    fill: "none",
+    stroke: "currentColor",
+    strokeWidth: 1.7,
+    strokeLinecap: "round",
+    strokeLinejoin: "round",
+  };
   switch (name) {
     case "aire":
       return (
@@ -59,7 +74,9 @@ export default function Services() {
     <section className="services" id="servicios">
       <div className="container">
         <span className="eyebrow">Qué hacemos</span>
-        <h2 className="services-title">Un técnico, todas las soluciones de frío y lavado</h2>
+        <h2 className="services-title">
+          Un técnico, todas las soluciones de frío y lavado
+        </h2>
 
         <div className="services-grid">
           {SERVICES.map((s) => (
@@ -69,7 +86,12 @@ export default function Services() {
               </div>
               <h3 className="service-name">{s.title}</h3>
               <p className="service-desc">{s.desc}</p>
-              <a href={waLink(s.msg)} target="_blank" rel="noopener noreferrer" className="service-link">
+              <a
+                href={waLink(s.msg)}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="service-link"
+              >
                 Consultar →
               </a>
             </div>

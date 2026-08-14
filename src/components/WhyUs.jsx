@@ -4,7 +4,7 @@ const POINTS = [
     desc: "Te decimos el costo antes de arrancar. Sin sorpresas en la factura.",
   },
   {
-    title: "Garantía por escrito",
+    title: "Garantía y Calidad asegurada",
     desc: "Cada reparación sale con garantía sobre el trabajo realizado.",
   },
   {
@@ -25,7 +25,9 @@ export default function WhyUs() {
         <div className="whyus-grid">
           {POINTS.map((p, i) => (
             <div className="whyus-item" key={p.title}>
-              <span className="whyus-num">{String(i + 1).padStart(2, "0")}</span>
+              <span className="whyus-num">
+                {String(i + 1).padStart(2, "0")}
+              </span>
               <h3 className="whyus-title">{p.title}</h3>
               <p className="whyus-desc">{p.desc}</p>
             </div>
