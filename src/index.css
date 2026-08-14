@@ -1,0 +1,99 @@
+:root {
+  /* Paleta */
+  --azul-acero: #0B3D5C;
+  --azul-acero-dark: #082D45;
+  --azul-hielo: #5AA9C9;
+  --azul-hielo-light: #A9D4E6;
+  --grafito: #141821;
+  --grafito-soft: #1D232F;
+  --blanco-frio: #F4F7FA;
+  --blanco-puro: #FFFFFF;
+  --verde-wpp: #25D366;
+  --verde-wpp-dark: #1DA851;
+  --naranja: #E8842C;
+  --linea: rgba(11, 61, 92, 0.12);
+
+  /* Tipografía */
+  --font-display: 'Space Grotesk', sans-serif;
+  --font-body: 'Inter', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+
+  --radius: 10px;
+  --container: 1180px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  background: var(--blanco-frio);
+  color: var(--grafito);
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  margin: 0;
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+}
+
+p {
+  margin: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+}
+
+img, svg {
+  display: block;
+  max-width: 100%;
+}
+
+.container {
+  width: 100%;
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--azul-hielo);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Foco visible accesible */
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--azul-hielo);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
