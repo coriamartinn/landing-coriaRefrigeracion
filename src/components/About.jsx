@@ -9,14 +9,20 @@ export default function About() {
           <span className="eyebrow">Quiénes somos</span>
           <h2 className="about-title">Trabajo técnico serio, sin vueltas</h2>
           <p className="about-text">
-            Con más de 40 años de trayectoria, en Coria Refrigeración instalamos
-            y reparamos aires acondicionados, heladeras y lavarropas en {CONTACT.zona}.
-            Diagnosticamos el problema real, te explicamos qué necesita el equipo
-            y hacemos el trabajo con repuestos adecuados y garantía por escrito.
+            Con más de 40 años de trayectoria, en Coria Refrigeración brindamos
+            soluciones integrales en refrigeración y climatización en{" "}
+            {CONTACT.zona}, especializándonos en la instalación y reparación de
+            aires acondicionados, heladeras y lavarropas, así como en el diseño
+            y construcción de cámaras frigoríficas desde cero, adaptadas a las
+            necesidades de cada proyecto. Realizamos diagnósticos precisos para
+            identificar el problema real, te explicamos qué necesita tu equipo y
+            llevamos a cabo cada trabajo con repuestos adecuados y mano de obra
+            especializada.
           </p>
           <p className="about-text">
-            Nada de esperas eternas ni presupuestos inflados: coordinamos la visita
-            por WhatsApp y te confirmamos el costo antes de mover un tornillo.
+            Nada de esperas eternas ni presupuestos inflados: coordinamos la
+            visita por WhatsApp y te confirmamos el costo antes de mover un
+            tornillo.
           </p>
 
           <div className="about-actions">
@@ -42,8 +48,8 @@ export default function About() {
             <span className="panel-value">Sin cargo, por WhatsApp</span>
           </div>
           <div className="panel-row">
-            <span className="panel-label">Garantía</span>
-            <span className="panel-value">Por escrito en cada trabajo</span>
+            <span className="panel-label">Calidad</span>
+            <span className="panel-value">Asegurada en cada trabajo</span>
           </div>
           <div className="panel-row panel-row-last">
             <span className="panel-label">Experiencia</span>
