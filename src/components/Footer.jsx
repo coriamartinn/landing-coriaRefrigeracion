@@ -27,7 +27,7 @@ export default function Footer() {
 
         <div>
           <a
-            href={waLink(CONTACT.mensajeConsulta)}
+            href={waLink(CONTACT.mensajeConsulta, WHATSAPP_NUMBER_TITI)}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 border-t border-white/12 pt-5 font-mono text-[0.92rem] font-medium text-white transition-colors hover:text-verde-wpp"
@@ -36,7 +36,7 @@ export default function Footer() {
             {displayNumberUno}
           </a>
           <a
-            href={waLink(CONTACT.mensajeConsulta)}
+            href={waLink(CONTACT.mensajeConsulta, WHATSAPP_NUMBER_COCO)}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 border-t border-white/12 pt-5 font-mono text-[0.92rem] font-medium text-white transition-colors hover:text-verde-wpp"

@@ -15,7 +15,7 @@ export default function CTABand() {
           </p>
         </div>
         <a
-          href={waLink(CONTACT.mensajePresupuesto)}
+          href={waLink(CONTACT.mensajePresupuesto, CONTACT.)}
           target="_blank"
           rel="noopener noreferrer"
           className="inline-flex items-center gap-2.5 rounded-full bg-white px-7 py-[17px] font-bold whitespace-nowrap text-verde-wpp-dark shadow-[0_10px_26px_rgba(0,0,0,0.18)] transition duration-200 hover:-translate-y-0.5 hover:shadow-[0_14px_30px_rgba(0,0,0,0.22)]"
