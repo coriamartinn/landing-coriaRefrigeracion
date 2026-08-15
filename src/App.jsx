@@ -7,10 +7,11 @@ import WhyUs from "./components/WhyUs";
 import CTABand from "./components/CTABand";
 import Footer from "./components/Footer";
 import WhatsAppFAB from "./components/WhatsAppFAB";
+import { WhatsAppPickerProvider } from "./components/WhatsAppPickerContext";
 
 function App() {
   return (
-    <>
+    <WhatsAppPickerProvider>
       <Header />
       <main>
         <Hero />
@@ -22,7 +23,7 @@ function App() {
       </main>
       <Footer />
       <WhatsAppFAB />
-    </>
+    </WhatsAppPickerProvider>
   );
 }
 
