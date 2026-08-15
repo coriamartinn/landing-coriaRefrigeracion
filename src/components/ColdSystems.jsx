@@ -1,5 +1,5 @@
 import WhatsAppIcon from "./WhatsAppIcon";
-import { waLink } from "../config";
+import { useWhatsAppPicker } from "./WhatsAppPickerContext";
 
 const FEATURES = [
   {
@@ -52,6 +52,8 @@ function FeatureIcon({ name }) {
 }
 
 export default function ColdSystems() {
+  const { openPicker } = useWhatsAppPicker();
+
   return (
     <section className="relative overflow-hidden bg-azul-acero-dark py-16 sm:py-[90px]">
       <div
@@ -69,15 +71,18 @@ export default function ColdSystems() {
             refrigeración para comercios, depósitos e industria. Si tu proyecto
             necesita un equipo grande, lo armamos a medida.
           </p>
-          <a
-            href={waLink("Hola! Quiero consultar por un proyecto de refrigeración industrial / cámara frigorífica.")}
-            target="_blank"
-            rel="noopener noreferrer"
+          <button
+            type="button"
+            onClick={() =>
+              openPicker(
+                "Hola! Quiero consultar por un proyecto de refrigeración industrial / cámara frigorífica."
+              )
+            }
             className="btn btn-primary"
           >
             <WhatsAppIcon size={20} />
             Consultar por un proyecto
-          </a>
+          </button>
         </div>
 
         <div className="flex flex-col gap-[22px] rounded-2xl border border-white/10 bg-white/[0.04] p-[22px] sm:p-7">

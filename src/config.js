@@ -2,11 +2,21 @@
 
 export const WHATSAPP_NUMBER_TITI = "541131515365"; // formato internacional sin "+"
 export const WHATSAPP_NUMBER_COCO = "541121737187"; // formato internacional sin "+"
-//export const WHATSAPP_NUMBER_PABLO = "541131515365"; // formato internacional sin "+"
-//export const WHATSAPP_NUMBER_ADRIAN = "541131515365"; // formato internacional sin "+"
+export const WHATSAPP_NUMBER_PABLO = "541127558364"; // formato internacional sin "+"
+export const WHATSAPP_NUMBER_ADRIAN = "541168858103"; // formato internacional sin "+"
 
-export function waLink(message, WHATSAPP_NUMBER) {
-  const base = `https://wa.me/${WHATSAPP_NUMBER}`;
+// Lista de contactos disponibles para elegir a la hora de escribir por WhatsApp.
+// El selector de contacto se arma automáticamente a partir de este array:
+// para sumar o sacar a alguien, alcanza con editar esta lista.
+export const CONTACTS = [
+  { name: "Titi", number: WHATSAPP_NUMBER_TITI },
+  { name: "Coco", number: WHATSAPP_NUMBER_COCO },
+  { name: "Pablo", number: WHATSAPP_NUMBER_PABLO },
+  { name: "Adrian", number: WHATSAPP_NUMBER_ADRIAN },
+];
+
+export function waLink(message, number) {
+  const base = `https://wa.me/${number}`;
   return message ? `${base}?text=${encodeURIComponent(message)}` : base;
 }
 

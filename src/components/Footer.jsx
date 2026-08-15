@@ -1,18 +1,12 @@
 import Logo from "./Logo";
 import WhatsAppIcon from "./WhatsAppIcon";
-import {
-  waLink,
-  CONTACT,
-  WHATSAPP_NUMBER_TITI,
-  WHATSAPP_NUMBER_COCO,
-} from "../config";
+import { waLink, CONTACT, CONTACTS } from "../config";
 
-const displayNumberUno =
-  "+" +
-  WHATSAPP_NUMBER_TITI.replace(/(\d{2})(\d{2,4})(\d{4})(\d{4})/, "$1 $2 $3-$4");
-const displayNumberDos =
-  "+" +
-  WHATSAPP_NUMBER_COCO.replace(/(\d{2})(\d{2,4})(\d{4})(\d{4})/, "$1 $2 $3-$4");
+function displayNumber(number) {
+  return (
+    "+" + number.replace(/(\d{2})(\d{2,4})(\d{4})(\d{4})/, "$1 $2 $3-$4")
+  );
+}
 
 export default function Footer() {
   return (
@@ -25,28 +19,19 @@ export default function Footer() {
           </p>
         </div>
 
-        <div>
-          <a
-            href={waLink(CONTACT.mensajeConsulta, WHATSAPP_NUMBER_TITI)}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 border-t border-white/12 pt-5 font-mono text-[0.92rem] font-medium text-white transition-colors hover:text-verde-wpp"
-          >
-            <WhatsAppIcon size={18} />
-            {displayNumberUno}
-          </a>
-        </div>
-        <div>
-          <a
-            href={waLink(CONTACT.mensajeConsulta, WHATSAPP_NUMBER_COCO)}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 border-t border-white/12 pt-5 font-mono text-[0.92rem] font-medium text-white transition-colors hover:text-verde-wpp"
-          >
-            <WhatsAppIcon size={18} />
-            {displayNumberDos}
-          </a>
-        </div>
+        {CONTACTS.map((c) => (
+          <div key={c.number}>
+            <a
+              href={waLink(CONTACT.mensajeConsulta, c.number)}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 border-t border-white/12 pt-5 font-mono text-[0.92rem] font-medium text-white transition-colors hover:text-verde-wpp"
+            >
+              <WhatsAppIcon size={18} />
+              {c.name} · {displayNumber(c.number)}
+            </a>
+          </div>
+        ))}
 
         <p className="border-t border-white/12 pt-5 text-[0.78rem] text-white/50">
           © {new Date().getFullYear()} Coria Refrigeración. Todos los derechos

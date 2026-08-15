@@ -1,7 +1,10 @@
 import WhatsAppIcon from "./WhatsAppIcon";
-import { waLink, CONTACT } from "../config";
+import { CONTACT } from "../config";
+import { useWhatsAppPicker } from "./WhatsAppPickerContext";
 
 export default function Hero() {
+  const { openPicker } = useWhatsAppPicker();
+
   return (
     <section
       className="relative overflow-hidden bg-[linear-gradient(160deg,var(--color-azul-acero)_0%,var(--color-azul-acero-dark)_55%,var(--color-grafito)_100%)] pt-[100px] pb-[70px] sm:pt-[120px] sm:pb-[90px]"
@@ -33,15 +36,14 @@ export default function Hero() {
         </p>
 
         <div className="mb-14 flex flex-wrap gap-3.5">
-          <a
-            href={waLink(CONTACT.mensajePresupuesto)}
-            target="_blank"
-            rel="noopener noreferrer"
+          <button
+            type="button"
+            onClick={() => openPicker(CONTACT.mensajePresupuesto)}
             className="btn btn-primary max-sm:px-5 max-sm:py-3.5 max-sm:text-[0.92rem]"
           >
             <WhatsAppIcon size={20} />
             Pedir presupuesto ahora
-          </a>
+          </button>
           <a
             href="#servicios"
             className="btn btn-ghost max-sm:px-5 max-sm:py-3.5 max-sm:text-[0.92rem]"

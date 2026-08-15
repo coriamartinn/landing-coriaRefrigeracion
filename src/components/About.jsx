@@ -1,7 +1,10 @@
 import WhatsAppIcon from "./WhatsAppIcon";
-import { waLink, CONTACT } from "../config";
+import { CONTACT } from "../config";
+import { useWhatsAppPicker } from "./WhatsAppPickerContext";
 
 export default function About() {
+  const { openPicker } = useWhatsAppPicker();
+
   return (
     <section className="border-y border-azul-acero/12 bg-white py-16 sm:py-24" id="nosotros">
       <div className="wrap grid grid-cols-1 items-start gap-10 lg:grid-cols-[1.3fr_1fr] lg:gap-16">
@@ -26,15 +29,14 @@ export default function About() {
           </p>
 
           <div className="mt-7">
-            <a
-              href={waLink(CONTACT.mensajeConsulta)}
-              target="_blank"
-              rel="noopener noreferrer"
+            <button
+              type="button"
+              onClick={() => openPicker(CONTACT.mensajeConsulta)}
               className="btn btn-dark"
             >
               <WhatsAppIcon size={19} />
               Hablar por WhatsApp
-            </a>
+            </button>
           </div>
         </div>
 

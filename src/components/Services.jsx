@@ -1,4 +1,4 @@
-import { waLink } from "../config";
+import { useWhatsAppPicker } from "./WhatsAppPickerContext";
 
 const SERVICES = [
   {
@@ -70,6 +70,8 @@ function Icon({ name }) {
 }
 
 export default function Services() {
+  const { openPicker } = useWhatsAppPicker();
+
   return (
     <section className="py-16 sm:py-24" id="servicios">
       <div className="wrap">
@@ -89,14 +91,13 @@ export default function Services() {
               </div>
               <h3 className="mb-2 text-[1.1rem]">{s.title}</h3>
               <p className="mb-[18px] text-[0.9rem] leading-relaxed text-[#4A5568]">{s.desc}</p>
-              <a
-                href={waLink(s.msg)}
-                target="_blank"
-                rel="noopener noreferrer"
+              <button
+                type="button"
+                onClick={() => openPicker(s.msg)}
                 className="text-[0.86rem] font-semibold text-azul-acero transition-colors hover:text-verde-wpp-dark"
               >
                 Consultar →
-              </a>
+              </button>
             </div>
           ))}
         </div>

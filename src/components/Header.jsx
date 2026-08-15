@@ -1,8 +1,11 @@
 import Logo from "./Logo";
 import WhatsAppIcon from "./WhatsAppIcon";
-import { waLink, CONTACT } from "../config";
+import { CONTACT } from "../config";
+import { useWhatsAppPicker } from "./WhatsAppPickerContext";
 
 export default function Header() {
+  const { openPicker } = useWhatsAppPicker();
+
   return (
     <header className="sticky top-0 z-50 border-b border-azul-acero/12 bg-blanco-frio/92 backdrop-blur-md">
       <div className="wrap flex h-[72px] items-center justify-between gap-6">
@@ -25,15 +28,14 @@ export default function Header() {
           </a>
         </nav>
 
-        <a
-          href={waLink(CONTACT.mensajePresupuesto)}
-          target="_blank"
-          rel="noopener noreferrer"
+        <button
+          type="button"
+          onClick={() => openPicker(CONTACT.mensajePresupuesto)}
           className="inline-flex items-center gap-2 whitespace-nowrap rounded-full bg-verde-wpp px-4.5 py-2.5 text-[0.88rem] font-semibold text-white transition duration-200 hover:-translate-y-0.5 hover:bg-verde-wpp-dark max-[480px]:px-3"
         >
           <WhatsAppIcon size={18} />
           <span className="hidden sm:inline">Pedir presupuesto</span>
-        </a>
+        </button>
       </div>
     </header>
   );

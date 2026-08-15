@@ -1,7 +1,10 @@
 import WhatsAppIcon from "./WhatsAppIcon";
-import { waLink, CONTACT, WHATSAPP_NUMBER_TITI } from "../config";
+import { CONTACT } from "../config";
+import { useWhatsAppPicker } from "./WhatsAppPickerContext";
 
 export default function CTABand() {
+  const { openPicker } = useWhatsAppPicker();
+
   return (
     <section
       className="bg-[linear-gradient(120deg,var(--color-verde-wpp-dark),var(--color-verde-wpp))] py-12 sm:py-16"
@@ -17,15 +20,14 @@ export default function CTABand() {
             momento.
           </p>
         </div>
-        <a
-          href={waLink(CONTACT.mensajePresupuesto, WHATSAPP_NUMBER_TITI)}
-          target="_blank"
-          rel="noopener noreferrer"
+        <button
+          type="button"
+          onClick={() => openPicker(CONTACT.mensajePresupuesto)}
           className="inline-flex items-center gap-2.5 rounded-full bg-white px-7 py-[17px] font-bold whitespace-nowrap text-verde-wpp-dark shadow-[0_10px_26px_rgba(0,0,0,0.18)] transition duration-200 hover:-translate-y-0.5 hover:shadow-[0_14px_30px_rgba(0,0,0,0.22)]"
         >
           <WhatsAppIcon size={22} />
           Pedir presupuesto por WhatsApp
-        </a>
+        </button>
       </div>
     </section>
   );
