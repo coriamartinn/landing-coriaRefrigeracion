@@ -7,57 +7,14 @@ export default function WhatsAppFAB() {
       href={waLink(CONTACT.mensajeConsulta)}
       target="_blank"
       rel="noopener noreferrer"
-      className="wa-fab"
+      className="fixed right-5 bottom-5 z-[60] flex h-[52px] w-[52px] items-center justify-center rounded-full bg-verde-wpp text-white shadow-[0_8px_24px_rgba(37,211,102,0.45)] transition duration-200 hover:-translate-y-[3px] hover:scale-[1.04] hover:shadow-[0_12px_28px_rgba(37,211,102,0.55)] sm:right-5 sm:bottom-5 md:h-[58px] md:w-[58px]"
       aria-label="Contactar por WhatsApp"
     >
-      <span className="wa-fab-ping" aria-hidden="true" />
+      <span
+        className="absolute inset-0 rounded-full bg-verde-wpp opacity-55 animate-wa-pulse motion-reduce:hidden motion-reduce:animate-none"
+        aria-hidden="true"
+      />
       <WhatsAppIcon size={26} />
-
-      <style>{`
-        .wa-fab {
-          position: fixed;
-          right: 20px;
-          bottom: 20px;
-          width: 58px;
-          height: 58px;
-          border-radius: 50%;
-          background: var(--verde-wpp);
-          color: white;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          box-shadow: 0 8px 24px rgba(37, 211, 102, 0.45);
-          z-index: 60;
-          transition: transform 0.2s ease, box-shadow 0.2s ease;
-        }
-        .wa-fab:hover {
-          transform: translateY(-3px) scale(1.04);
-          box-shadow: 0 12px 28px rgba(37, 211, 102, 0.55);
-        }
-        .wa-fab-ping {
-          position: absolute;
-          inset: 0;
-          border-radius: 50%;
-          background: var(--verde-wpp);
-          opacity: 0.55;
-          animation: wa-pulse 2.2s ease-out infinite;
-        }
-        @keyframes wa-pulse {
-          0% { transform: scale(1); opacity: 0.5; }
-          100% { transform: scale(1.7); opacity: 0; }
-        }
-        @media (prefers-reduced-motion: reduce) {
-          .wa-fab-ping { animation: none; display: none; }
-        }
-        @media (max-width: 640px) {
-          .wa-fab {
-            width: 52px;
-            height: 52px;
-            right: 14px;
-            bottom: 14px;
-          }
-        }
-      `}</style>
     </a>
   );
 }

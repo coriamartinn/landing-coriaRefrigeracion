@@ -1,99 +1,117 @@
-:root {
+@import "tailwindcss";
+
+@theme {
   /* Paleta */
-  --azul-acero: #0B3D5C;
-  --azul-acero-dark: #082D45;
-  --azul-hielo: #5AA9C9;
-  --azul-hielo-light: #A9D4E6;
-  --grafito: #141821;
-  --grafito-soft: #1D232F;
-  --blanco-frio: #F4F7FA;
-  --blanco-puro: #FFFFFF;
-  --verde-wpp: #25D366;
-  --verde-wpp-dark: #1DA851;
-  --naranja: #E8842C;
-  --linea: rgba(11, 61, 92, 0.12);
+  --color-azul-acero: #0b3d5c;
+  --color-azul-acero-dark: #082d45;
+  --color-azul-hielo: #5aa9c9;
+  --color-azul-hielo-light: #a9d4e6;
+  --color-grafito: #141821;
+  --color-grafito-soft: #1d232f;
+  --color-blanco-frio: #f4f7fa;
+  --color-blanco-puro: #ffffff;
+  --color-verde-wpp: #25d366;
+  --color-verde-wpp-dark: #1da851;
+  --color-naranja: #e8842c;
+  --color-linea: rgba(11, 61, 92, 0.12);
 
   /* Tipografía */
-  --font-display: 'Space Grotesk', sans-serif;
-  --font-body: 'Inter', sans-serif;
-  --font-mono: 'JetBrains Mono', monospace;
+  --font-display: "Space Grotesk", sans-serif;
+  --font-body: "Inter", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
 
-  --radius: 10px;
-  --container: 1180px;
+  /* Radios */
+  --radius-brand: 10px;
+
+  /* Animación del FAB de WhatsApp */
+  --animate-wa-pulse: wa-pulse 2.2s ease-out infinite;
 }
 
-* {
-  box-sizing: border-box;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
-body {
-  margin: 0;
-  font-family: var(--font-body);
-  background: var(--blanco-frio);
-  color: var(--grafito);
-  -webkit-font-smoothing: antialiased;
-}
-
-h1, h2, h3, h4 {
-  font-family: var(--font-display);
-  margin: 0;
-  line-height: 1.1;
-  letter-spacing: -0.01em;
-}
-
-p {
-  margin: 0;
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-button {
-  font-family: inherit;
-  cursor: pointer;
-  border: none;
-}
-
-img, svg {
-  display: block;
-  max-width: 100%;
-}
-
-.container {
-  width: 100%;
-  max-width: var(--container);
-  margin: 0 auto;
-  padding: 0 24px;
-}
-
-.eyebrow {
-  font-family: var(--font-mono);
-  font-size: 0.78rem;
-  font-weight: 600;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--azul-hielo);
-}
-
-@media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-    scroll-behavior: auto !important;
+@keyframes wa-pulse {
+  0% {
+    transform: scale(1);
+    opacity: 0.5;
+  }
+  100% {
+    transform: scale(1.7);
+    opacity: 0;
   }
 }
 
-/* Foco visible accesible */
-a:focus-visible,
-button:focus-visible {
-  outline: 2px solid var(--azul-hielo);
-  outline-offset: 3px;
-  border-radius: 4px;
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-blanco-frio text-grafito antialiased;
+    font-family: var(--font-body);
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply m-0 leading-[1.1] tracking-[-0.01em];
+    font-family: var(--font-display);
+  }
+
+  p {
+    @apply m-0;
+  }
+
+  a {
+    @apply text-inherit no-underline;
+  }
+
+  button {
+    @apply cursor-pointer border-0 font-[inherit];
+  }
+
+  img,
+  svg {
+    @apply block max-w-full;
+  }
+
+  a:focus-visible,
+  button:focus-visible {
+    @apply rounded outline-2 outline-azul-hielo outline-offset-[3px];
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+
+@layer components {
+  /* Envoltorio central del contenido, ancho máx. 1180px */
+  .wrap {
+    @apply mx-auto w-full max-w-[1180px] px-6;
+  }
+
+  /* Etiqueta pequeña tipo "kicker" arriba de los títulos */
+  .eyebrow {
+    @apply font-mono text-[0.78rem] font-semibold tracking-[0.08em] text-azul-hielo uppercase;
+  }
+
+  /* Botones */
+  .btn {
+    @apply inline-flex items-center gap-2.5 rounded-full px-5 py-[15px] text-[0.98rem] font-semibold transition duration-200 ease-out;
+  }
+  .btn-primary {
+    @apply bg-verde-wpp text-white shadow-[0_10px_26px_rgba(37,211,102,0.35)] hover:-translate-y-0.5 hover:bg-verde-wpp-dark;
+  }
+  .btn-ghost {
+    @apply border border-white/25 bg-white/[0.06] text-white hover:bg-white/[0.14];
+  }
+  .btn-dark {
+    @apply bg-grafito text-white hover:-translate-y-0.5 hover:bg-azul-acero;
+  }
 }

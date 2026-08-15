@@ -71,26 +71,29 @@ function Icon({ name }) {
 
 export default function Services() {
   return (
-    <section className="services" id="servicios">
-      <div className="container">
+    <section className="py-16 sm:py-24" id="servicios">
+      <div className="wrap">
         <span className="eyebrow">Qué hacemos</span>
-        <h2 className="services-title">
+        <h2 className="mt-3.5 mb-12 max-w-[640px] text-[clamp(1.7rem,3.4vw,2.3rem)] text-grafito">
           Un técnico, todas las soluciones de frío y lavado
         </h2>
 
-        <div className="services-grid">
+        <div className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
           {SERVICES.map((s) => (
-            <div className="service-card" key={s.title}>
-              <div className="service-icon">
+            <div
+              className="rounded-brand border border-azul-acero/12 bg-white p-6 px-6 py-7 transition duration-200 hover:-translate-y-1 hover:border-azul-hielo hover:shadow-[0_16px_32px_rgba(11,61,92,0.1)]"
+              key={s.title}
+            >
+              <div className="mb-[18px] flex h-12 w-12 items-center justify-center rounded-[10px] bg-azul-acero text-azul-hielo-light">
                 <Icon name={s.icon} />
               </div>
-              <h3 className="service-name">{s.title}</h3>
-              <p className="service-desc">{s.desc}</p>
+              <h3 className="mb-2 text-[1.1rem]">{s.title}</h3>
+              <p className="mb-[18px] text-[0.9rem] leading-relaxed text-[#4A5568]">{s.desc}</p>
               <a
                 href={waLink(s.msg)}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="service-link"
+                className="text-[0.86rem] font-semibold text-azul-acero transition-colors hover:text-verde-wpp-dark"
               >
                 Consultar →
               </a>
@@ -98,71 +101,6 @@ export default function Services() {
           ))}
         </div>
       </div>
-
-      <style>{`
-        .services {
-          padding: 96px 0;
-        }
-        .services-title {
-          font-size: clamp(1.7rem, 3.4vw, 2.3rem);
-          color: var(--grafito);
-          margin: 14px 0 48px;
-          max-width: 640px;
-        }
-        .services-grid {
-          display: grid;
-          grid-template-columns: repeat(3, 1fr);
-          gap: 20px;
-        }
-        .service-card {
-          background: white;
-          border: 1px solid var(--linea);
-          border-radius: var(--radius);
-          padding: 28px 24px;
-          transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
-        }
-        .service-card:hover {
-          transform: translateY(-4px);
-          box-shadow: 0 16px 32px rgba(11, 61, 92, 0.1);
-          border-color: var(--azul-hielo);
-        }
-        .service-icon {
-          width: 48px;
-          height: 48px;
-          border-radius: 10px;
-          background: var(--azul-acero);
-          color: var(--azul-hielo-light);
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          margin-bottom: 18px;
-        }
-        .service-name {
-          font-size: 1.1rem;
-          margin-bottom: 8px;
-        }
-        .service-desc {
-          font-size: 0.9rem;
-          color: #4A5568;
-          line-height: 1.5;
-          margin-bottom: 18px;
-        }
-        .service-link {
-          font-size: 0.86rem;
-          font-weight: 600;
-          color: var(--azul-acero);
-        }
-        .service-link:hover {
-          color: var(--verde-wpp-dark);
-        }
-        @media (max-width: 980px) {
-          .services-grid { grid-template-columns: 1fr 1fr; }
-        }
-        @media (max-width: 560px) {
-          .services { padding: 64px 0; }
-          .services-grid { grid-template-columns: 1fr; }
-        }
-      `}</style>
     </section>
   );
 }

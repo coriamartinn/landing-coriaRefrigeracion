@@ -1,5 +1,5 @@
 import WhatsAppIcon from "./WhatsAppIcon";
-import { waLink, CONTACT } from "../config";
+import { waLink } from "../config";
 
 const FEATURES = [
   {
@@ -53,15 +53,18 @@ function FeatureIcon({ name }) {
 
 export default function ColdSystems() {
   return (
-    <section className="coldsys">
-      <div className="coldsys-grid-bg" aria-hidden="true" />
-      <div className="container coldsys-inner">
-        <div className="coldsys-copy">
-          <span className="eyebrow coldsys-eyebrow">Instalaciones a gran escala</span>
-          <h2 className="coldsys-title">
+    <section className="relative overflow-hidden bg-azul-acero-dark py-16 sm:py-[90px]">
+      <div
+        className="pointer-events-none absolute inset-0 [background-image:linear-gradient(rgba(90,169,201,0.12)_1px,transparent_1px),linear-gradient(90deg,rgba(90,169,201,0.12)_1px,transparent_1px)] [background-size:38px_38px] [mask-image:radial-gradient(ellipse_70%_90%_at_0%_50%,black_30%,transparent_85%)] [-webkit-mask-image:radial-gradient(ellipse_70%_90%_at_0%_50%,black_30%,transparent_85%)]"
+        aria-hidden="true"
+      />
+      <div className="wrap relative z-[2] grid grid-cols-1 items-center gap-10 lg:grid-cols-2 lg:gap-14">
+        <div>
+          <span className="eyebrow mb-4 block">Instalaciones a gran escala</span>
+          <h2 className="mb-[18px] max-w-[480px] text-[clamp(1.6rem,3.4vw,2.3rem)] text-white">
             Cámaras frigoríficas y sistemas de frío industrial
           </h2>
-          <p className="coldsys-text">
+          <p className="mb-[30px] max-w-[460px] text-[1rem] leading-[1.65] text-azul-hielo-light">
             No solo trabajamos en casas: diseñamos e instalamos sistemas de
             refrigeración para comercios, depósitos e industria. Si tu proyecto
             necesita un equipo grande, lo armamos a medida.
@@ -70,113 +73,27 @@ export default function ColdSystems() {
             href={waLink("Hola! Quiero consultar por un proyecto de refrigeración industrial / cámara frigorífica.")}
             target="_blank"
             rel="noopener noreferrer"
-            className="btn btn-primary coldsys-cta"
+            className="btn btn-primary"
           >
             <WhatsAppIcon size={20} />
             Consultar por un proyecto
           </a>
         </div>
 
-        <div className="coldsys-features">
+        <div className="flex flex-col gap-[22px] rounded-2xl border border-white/10 bg-white/[0.04] p-[22px] sm:p-7">
           {FEATURES.map((f) => (
-            <div className="coldsys-feature" key={f.title}>
-              <div className="coldsys-feature-icon">
+            <div className="flex items-start gap-4" key={f.title}>
+              <div className="flex h-[42px] w-[42px] shrink-0 items-center justify-center rounded-[10px] bg-azul-hielo/16 text-azul-hielo">
                 <FeatureIcon name={f.icon} />
               </div>
               <div>
-                <h3 className="coldsys-feature-title">{f.title}</h3>
-                <p className="coldsys-feature-desc">{f.desc}</p>
+                <h3 className="mb-1 text-[1rem] text-white">{f.title}</h3>
+                <p className="text-[0.86rem] leading-relaxed text-[#9FB4C4]">{f.desc}</p>
               </div>
             </div>
           ))}
         </div>
       </div>
-
-      <style>{`
-        .coldsys {
-          position: relative;
-          overflow: hidden;
-          background: var(--azul-acero-dark);
-          padding: 90px 0;
-        }
-        .coldsys-grid-bg {
-          position: absolute;
-          inset: 0;
-          background-image:
-            linear-gradient(rgba(90, 169, 201, 0.12) 1px, transparent 1px),
-            linear-gradient(90deg, rgba(90, 169, 201, 0.12) 1px, transparent 1px);
-          background-size: 38px 38px;
-          -webkit-mask-image: radial-gradient(ellipse 70% 90% at 0% 50%, black 30%, transparent 85%);
-          mask-image: radial-gradient(ellipse 70% 90% at 0% 50%, black 30%, transparent 85%);
-        }
-        .coldsys-inner {
-          position: relative;
-          z-index: 2;
-          display: grid;
-          grid-template-columns: 1fr 1fr;
-          gap: 56px;
-          align-items: center;
-        }
-        .coldsys-eyebrow {
-          display: block;
-          margin-bottom: 16px;
-        }
-        .coldsys-title {
-          color: white;
-          font-size: clamp(1.6rem, 3.4vw, 2.3rem);
-          margin-bottom: 18px;
-          max-width: 480px;
-        }
-        .coldsys-text {
-          color: var(--azul-hielo-light);
-          font-size: 1rem;
-          line-height: 1.65;
-          max-width: 460px;
-          margin-bottom: 30px;
-        }
-        .coldsys-features {
-          display: flex;
-          flex-direction: column;
-          gap: 22px;
-          background: rgba(255,255,255,0.04);
-          border: 1px solid rgba(255,255,255,0.1);
-          border-radius: 14px;
-          padding: 28px;
-        }
-        .coldsys-feature {
-          display: flex;
-          gap: 16px;
-          align-items: flex-start;
-        }
-        .coldsys-feature-icon {
-          flex-shrink: 0;
-          width: 42px;
-          height: 42px;
-          border-radius: 10px;
-          background: rgba(90, 169, 201, 0.16);
-          color: var(--azul-hielo);
-          display: flex;
-          align-items: center;
-          justify-content: center;
-        }
-        .coldsys-feature-title {
-          color: white;
-          font-size: 1rem;
-          margin-bottom: 4px;
-        }
-        .coldsys-feature-desc {
-          color: #9FB4C4;
-          font-size: 0.86rem;
-          line-height: 1.5;
-        }
-        @media (max-width: 900px) {
-          .coldsys-inner { grid-template-columns: 1fr; gap: 40px; }
-        }
-        @media (max-width: 560px) {
-          .coldsys { padding: 64px 0; }
-          .coldsys-features { padding: 22px; }
-        }
-      `}</style>
     </section>
   );
 }

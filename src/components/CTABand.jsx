@@ -3,66 +3,27 @@ import { waLink, CONTACT } from "../config";
 
 export default function CTABand() {
   return (
-    <section className="ctaband" id="contacto">
-      <div className="container ctaband-inner">
+    <section
+      className="bg-[linear-gradient(120deg,var(--color-verde-wpp-dark),var(--color-verde-wpp))] py-12 sm:py-16"
+      id="contacto"
+    >
+      <div className="wrap flex flex-wrap items-center justify-between gap-8">
         <div>
-          <h2 className="ctaband-title">¿Necesitás presupuesto ya?</h2>
-          <p className="ctaband-text">Contanos qué equipo tenés y te respondemos por WhatsApp en el momento.</p>
+          <h2 className="mb-2 text-[clamp(1.5rem,3vw,2rem)] text-white">¿Necesitás presupuesto ya?</h2>
+          <p className="text-[1rem] text-white/90">
+            Contanos qué equipo tenés y te respondemos por WhatsApp en el momento.
+          </p>
         </div>
         <a
           href={waLink(CONTACT.mensajePresupuesto)}
           target="_blank"
           rel="noopener noreferrer"
-          className="ctaband-btn"
+          className="inline-flex items-center gap-2.5 rounded-full bg-white px-7 py-[17px] font-bold whitespace-nowrap text-verde-wpp-dark shadow-[0_10px_26px_rgba(0,0,0,0.18)] transition duration-200 hover:-translate-y-0.5 hover:shadow-[0_14px_30px_rgba(0,0,0,0.22)]"
         >
           <WhatsAppIcon size={22} />
           Pedir presupuesto por WhatsApp
         </a>
       </div>
-
-      <style>{`
-        .ctaband {
-          background: linear-gradient(120deg, var(--verde-wpp-dark), var(--verde-wpp));
-          padding: 64px 0;
-        }
-        .ctaband-inner {
-          display: flex;
-          align-items: center;
-          justify-content: space-between;
-          gap: 32px;
-          flex-wrap: wrap;
-        }
-        .ctaband-title {
-          color: white;
-          font-size: clamp(1.5rem, 3vw, 2rem);
-          margin-bottom: 8px;
-        }
-        .ctaband-text {
-          color: rgba(255,255,255,0.9);
-          font-size: 1rem;
-        }
-        .ctaband-btn {
-          display: inline-flex;
-          align-items: center;
-          gap: 10px;
-          background: white;
-          color: var(--verde-wpp-dark);
-          font-weight: 700;
-          padding: 17px 28px;
-          border-radius: 999px;
-          white-space: nowrap;
-          box-shadow: 0 10px 26px rgba(0, 0, 0, 0.18);
-          transition: transform 0.2s ease, box-shadow 0.2s ease;
-        }
-        .ctaband-btn:hover {
-          transform: translateY(-2px);
-          box-shadow: 0 14px 30px rgba(0, 0, 0, 0.22);
-        }
-        @media (max-width: 560px) {
-          .ctaband { padding: 48px 0; }
-          .ctaband-inner { flex-direction: column; align-items: flex-start; }
-        }
-      `}</style>
     </section>
   );
 }

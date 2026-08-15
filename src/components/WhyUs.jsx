@@ -19,64 +19,21 @@ const POINTS = [
 
 export default function WhyUs() {
   return (
-    <section className="whyus">
-      <div className="container">
-        <span className="eyebrow">Por qué elegirnos</span>
-        <div className="whyus-grid">
+    <section className="bg-grafito py-16 sm:py-[90px]">
+      <div className="wrap">
+        <span className="eyebrow mb-8 block">Por qué elegirnos</span>
+        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 sm:gap-8 lg:grid-cols-4">
           {POINTS.map((p, i) => (
-            <div className="whyus-item" key={p.title}>
-              <span className="whyus-num">
+            <div className="border-t border-white/14 pt-5" key={p.title}>
+              <span className="font-mono text-[0.85rem] font-semibold text-azul-hielo">
                 {String(i + 1).padStart(2, "0")}
               </span>
-              <h3 className="whyus-title">{p.title}</h3>
-              <p className="whyus-desc">{p.desc}</p>
+              <h3 className="my-2.5 mt-2.5 mb-2 text-[1.08rem] text-white">{p.title}</h3>
+              <p className="text-[0.9rem] leading-[1.55] text-[#A8B3C2]">{p.desc}</p>
             </div>
           ))}
         </div>
       </div>
-
-      <style>{`
-        .whyus {
-          background: var(--grafito);
-          padding: 90px 0;
-        }
-        .whyus .eyebrow {
-          display: block;
-          margin-bottom: 32px;
-        }
-        .whyus-grid {
-          display: grid;
-          grid-template-columns: repeat(4, 1fr);
-          gap: 32px;
-        }
-        .whyus-item {
-          border-top: 1px solid rgba(255,255,255,0.14);
-          padding-top: 20px;
-        }
-        .whyus-num {
-          font-family: var(--font-mono);
-          color: var(--azul-hielo);
-          font-size: 0.85rem;
-          font-weight: 600;
-        }
-        .whyus-title {
-          color: white;
-          font-size: 1.08rem;
-          margin: 10px 0 8px;
-        }
-        .whyus-desc {
-          color: #A8B3C2;
-          font-size: 0.9rem;
-          line-height: 1.55;
-        }
-        @media (max-width: 900px) {
-          .whyus-grid { grid-template-columns: repeat(2, 1fr); }
-        }
-        @media (max-width: 560px) {
-          .whyus { padding: 64px 0; }
-          .whyus-grid { grid-template-columns: 1fr; gap: 24px; }
-        }
-      `}</style>
     </section>
   );
 }
