@@ -35,6 +35,8 @@ export default function Footer() {
             <WhatsAppIcon size={18} />
             {displayNumberUno}
           </a>
+        </div>
+        <div>
           <a
             href={waLink(CONTACT.mensajeConsulta, WHATSAPP_NUMBER_COCO)}
             target="_blank"
