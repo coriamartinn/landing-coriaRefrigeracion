@@ -14,7 +14,7 @@ const SERVICES = [
     msg: "Hola! Quiero consultar sobre reparación de heladera o freezer.",
   },
   {
-    icon: "Camaras frigorificas",
+    icon: "camara",
     title: "Cámaras frigoríficas",
     desc: "Diagnóstico y reparación de cámaras frigoríficas y equipos de frío comercial y/o diseño de cámaras frigoríficas a medida desde cero.",
     msg: "Hola! Quiero consultar sobre reparación de cámara frigorífica.",
@@ -55,6 +55,15 @@ function Icon({ name }) {
           <line x1="8" y1="13" x2="8" y2="15" />
         </svg>
       );
+    case "camara":
+      return (
+        <svg {...common}>
+          <rect x="2" y="5" width="20" height="15" rx="1.5" />
+          <path d="M2 10h20" />
+          <path d="M12 5v15" />
+          <path d="M8 13l1.5 1.5L8 16M16 13l-1.5 1.5L16 16" />
+        </svg>
+      );
     case "lavarropas":
       return (
         <svg {...common}>
@@ -90,7 +99,9 @@ export default function Services() {
                 <Icon name={s.icon} />
               </div>
               <h3 className="mb-2 text-[1.1rem]">{s.title}</h3>
-              <p className="mb-[18px] text-[0.9rem] leading-relaxed text-[#4A5568]">{s.desc}</p>
+              <p className="mb-[18px] text-[0.9rem] leading-relaxed text-[#4A5568]">
+                {s.desc}
+              </p>
               <button
                 type="button"
                 onClick={() => openPicker(s.msg)}
