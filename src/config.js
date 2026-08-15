@@ -10,7 +10,7 @@ export const WHATSAPP_NUMBER_ADRIAN = "541168858103"; // formato internacional s
 // para sumar o sacar a alguien, alcanza con editar esta lista.
 export const CONTACTS = [
   { name: "Titi", number: WHATSAPP_NUMBER_TITI },
-  { name: "Coco", number: WHATSAPP_NUMBER_COCO },
+  { name: "Martin", number: WHATSAPP_NUMBER_COCO },
   { name: "Pablo", number: WHATSAPP_NUMBER_PABLO },
   { name: "Adrian", number: WHATSAPP_NUMBER_ADRIAN },
 ];
