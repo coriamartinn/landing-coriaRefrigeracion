@@ -9,7 +9,7 @@ export const WHATSAPP_NUMBER_ADRIAN = "541168858103"; // formato internacional s
 // El selector de contacto se arma automáticamente a partir de este array:
 // para sumar o sacar a alguien, alcanza con editar esta lista.
 export const CONTACTS = [
-  { name: "Titi", number: WHATSAPP_NUMBER_TITI },
+  { name: "Hector", number: WHATSAPP_NUMBER_TITI },
   { name: "Martin", number: WHATSAPP_NUMBER_COCO },
   { name: "Pablo", number: WHATSAPP_NUMBER_PABLO },
   { name: "Adrian", number: WHATSAPP_NUMBER_ADRIAN },

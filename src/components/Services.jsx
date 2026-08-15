@@ -4,7 +4,7 @@ const SERVICES = [
   {
     icon: "aire",
     title: "Aires acondicionados",
-    desc: "Instalación, mantenimiento y reparación de equipos split e inverter.",
+    desc: "Instalación, mantenimiento y reparación de equipos split, ventana y portátiles.",
     msg: "Hola! Quiero consultar sobre instalación/reparación de aire acondicionado.",
   },
   {
