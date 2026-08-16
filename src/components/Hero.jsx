@@ -31,8 +31,8 @@ export default function Hero() {
         </h1>
 
         <p className="mb-9 max-w-[540px] text-[1.12rem] leading-relaxed text-azul-hielo-light">
-          Instalamos y reparamos aires acondicionados, heladeras y lavarropas
-          en {CONTACT.zona}. Presupuesto sin cargo, directo por WhatsApp.
+          Instalamos y reparamos aires acondicionados, heladeras y lavarropas en{" "}
+          {CONTACT.zona}. Presupuesto sin cargo, directo por WhatsApp.
         </p>
 
         <div className="mb-14 flex flex-wrap gap-3.5">
@@ -54,19 +54,23 @@ export default function Hero() {
 
         <div className="flex items-center gap-7 border-t border-white/14 pt-7 max-[640px]:flex-wrap max-[640px]:gap-[18px]">
           <div className="flex flex-col gap-1">
-            <span className="font-mono text-[1.3rem] font-semibold text-white">+40</span>
-            <span className="text-[0.8rem] text-azul-hielo-light">Años de experiencia</span>
+            <span className="font-mono text-[1.3rem] font-semibold text-white">
+              +40
+            </span>
+            <span className="text-[0.8rem] text-azul-hielo-light">
+              Años de experiencia
+            </span>
           </div>
           <div className="h-8 w-px bg-white/16" />
           <div className="flex flex-col gap-1">
-            <span className="font-mono text-[1.3rem] font-semibold text-white">$0</span>
-            <span className="text-[0.8rem] text-azul-hielo-light">Costo del presupuesto</span>
+            <span className="font-mono text-[1.3rem] font-semibold text-white">
+              $0
+            </span>
+            <span className="text-[0.8rem] text-azul-hielo-light">
+              Costo del presupuesto
+            </span>
           </div>
           <div className="h-8 w-px bg-white/16" />
-          <div className="flex flex-col gap-1">
-            <span className="font-mono text-[1.3rem] font-semibold text-white">3</span>
-            <span className="text-[0.8rem] text-azul-hielo-light">Zonas cubiertas</span>
-          </div>
         </div>
       </div>
     </section>
